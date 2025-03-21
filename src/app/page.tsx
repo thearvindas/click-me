@@ -296,8 +296,8 @@ export default function Home() {
               color: 'rgba(255,255,255,0.9)',
               fontSize: '16px',
               fontWeight: '500',
-              textTransform: 'uppercase',
               letterSpacing: '0.15em',
+              textTransform: 'uppercase',
               textShadow: `
                 0 1px 1px rgba(0,0,0,0.6),
                 0 0 2px rgba(0,0,0,0.3)
@@ -431,7 +431,9 @@ export default function Home() {
         letterSpacing: '0.05em',
         textAlign: 'center',
         width: '100%',
-        padding: '0 1rem'
+        padding: '0 1rem',
+        zIndex: 50,
+        pointerEvents: 'auto'
       }}>
         Built by <a 
           href="mailto:thearvindas@gmail.com" 
@@ -448,7 +450,9 @@ export default function Home() {
           Arvin
         </a> with Next.js, TypeScript, Tailwind CSS, Framer Motion, Cursor{' '}
         <span style={{ opacity: 0.5 }}>•</span>{' '}
-        with help from Claude
+        with help from Claude{' '}
+        <span style={{ opacity: 0.5 }}>•</span>{' '}
+        hosted on Vercel
       </div>
     </div>
   );
