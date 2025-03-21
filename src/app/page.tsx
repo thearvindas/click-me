@@ -76,6 +76,20 @@ export default function Home() {
   };
 
   const handleClick = () => {
+    // Clear previous message first
+    setMessage(null);
+
+    // Show new milestone message if applicable
+    if (count === 9) {
+      setMessage('Double digits! 🎉');
+    } else if (count === 49) {
+      setMessage('Halfway to 100! 🚀');
+    } else if (count === 98) {
+      setMessage('Almost there! 💪');
+    } else if (count === 99) {
+      setMessage('Century! 🏆');
+    }
+
     setCount(prev => prev + 1);
     setIsPressed(true);
 
@@ -85,20 +99,6 @@ export default function Home() {
     // Trigger haptic feedback if available
     if (navigator.vibrate) {
       navigator.vibrate([5, 10, 5]);
-    }
-
-    // Clear previous message first
-    setMessage(null);
-
-    // Show new milestone message if applicable
-    if (count === 9) {
-      setMessage('Double digits! 🎉');
-    } else if (count === 49) {
-      setMessage('Halfway to 100! 🚀');
-    } else if (count === 99) {
-      setMessage('Almost there! 💪');
-    } else if (count === 100) {
-      setMessage('Century! 🏆');
     }
 
     setTimeout(() => {
